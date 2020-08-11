@@ -1,18 +1,31 @@
-use crate::hello::hello_world;
-
+mod array_stuff;
 mod hello;
 
+use crate::array_stuff::array_test;
+use crate::hello::hello_world;
+use std::f64::consts;
+use std::f64::consts::PI;
+
+
+
 fn main() {
-    for i in 0..9 {
-        println!("{} squared is {}", i, factorial(i as u64));
+    println!("{}",use_pi());
+    for i in 0..10 {
+        println!("{}", factorial(i));
     }
-    hello_world()
+    hello_world();
+    array_test();
 }
 
-fn factorial(n: u64) -> u64 {
-    if n == 0 {
+fn use_pi() -> f64{
+    PI
+}
+
+fn factorial(x: u64) -> u64 {
+    if x == 0 {
         1
     } else {
-        n * factorial(n-1)
+        x * factorial(x-1)
     }
+
 }
